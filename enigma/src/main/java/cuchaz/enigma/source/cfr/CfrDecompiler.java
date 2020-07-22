@@ -31,6 +31,8 @@ public class CfrDecompiler implements Decompiler {
     public CfrDecompiler(ClassProvider classProvider, SourceSettings sourceSettings) {
         Map<String, String> options = new HashMap<>();
 
+        options.put("usenametable", "false");
+
         state = new DCCommonState(OptionsImpl.getFactory().create(options), new ClassFileSource2() {
             @Override
             public JarContent addJarContent(String s, AnalysisType analysisType) {
